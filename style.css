@@ -99,13 +99,21 @@ button:hover{
     display: flex;
 }
 .output{
+    padding: 1rem;
+    margin: 1rem;
     border: 2px solid white;    
-    width: 200px;
-    height: 200px;
+    max-width: 200px;
+    max-height: 150px;
 }
 
+p{
+    display: none;
+    color: white;
+    font-size: larger;
+    text-align: center;
+}
 
-@media screen and (max-width:700p   x) {
+@media screen and (max-width:700px) {
 
     .sub-container{
         display: flex;
