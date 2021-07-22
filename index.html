@@ -1,12 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profit loss on stocks</title>
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <div class="main-form">
+          <nav><a href="https://gopalbharadva.netlify.app/">Portfolio</a></nav>
+          <h1>Profit and loss on stocks</h1>
+          <div class="sub-container">
+            <form>
+              <label>
+                <input
+                  type="text"
+                  required
+                  placeholder="Cost price of stock:"
+                  class="type"
+                />
+                Cost price
+              </label>
+              <label>
+                <input
+                  type="text"
+                  required
+                  placeholder="Number of stocks:"
+                  class="type"
+                />
+                No.of Stocks
+              </label>
+              <label>
+                <input
+                  type="text"
+                  required
+                  placeholder="Current stock value:"
+                  class="type"
+                />
+                Current value
+              </label>
+              <button>Check</button>
+            </form>
+            <div class="output"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="app.js"></script>
+  </body>
 </html>
