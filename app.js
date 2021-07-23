@@ -7,7 +7,7 @@ var bgImage=document.querySelector("body");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-
+  output.style.display="block";
   var costPrice = inputs[0].value;
   var quanity = inputs[1].value;
   var sellPrice = inputs[2].value;
