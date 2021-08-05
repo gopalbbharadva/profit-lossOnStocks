@@ -35,7 +35,7 @@ form.addEventListener("submit", (e) => {
       } else {
         output.style.display = "block";
         output.textContent = `You neither gain profit nor loose.`;
-        outputgif.style.backgroundImage = `url(Images/happy.gif)`;
+        outputgif.style.backgroundImage = `url(Images/ok.gif)`;
       }
     } else {
       alert("Please enter number greater than 0");
