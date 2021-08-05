@@ -1,44 +1,50 @@
 var form = document.querySelector("form");
 var inputs = document.querySelectorAll("input");
+var outputgif = document.querySelector(".output-gif");
 var output = document.querySelector(".output");
 var submitBtn = document.querySelector("button");
-var results = document.querySelectorAll("p");
-var bgImage=document.querySelector("body");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  output.style.display="block";
+  outputgif.style.display = "block";
+  output.style.display = "block";
   var costPrice = inputs[0].value;
   var quanity = inputs[1].value;
   var sellPrice = inputs[2].value;
   if (!isNaN(costPrice) && !isNaN(quanity) && !isNaN(sellPrice)) {
-    console.log("inside first if");
     var cp = Number(costPrice);
     var qt = Number(quanity);
     var sp = Number(sellPrice);
     if (cp > 0 && qt > 0 && sp > 0) {
       //loss
       if (cp > sp) {
-        results[0].style.display='none';
         var loss = ((cp - sp) * qt).toFixed(2);
-        var lossPercent = ((loss * 100) / cp).toFixed(2);
-        results[1].style.display = "block";
-        results[1].innerHTML = `Loss: <strong>${loss}</strong> rs.`;
-        results[2].style.display = "block";
-        results[2].innerHTML = `Percentage: <strong>${lossPercent}</strong> %`;
-        bgImage.style.backgroundImage=`url('Images/loss.jpeg')`
+        var lossPercent = (((cp - sp) * 100) / cp).toFixed(2);
+        output.style.display = "block";
+        output.textContent = `You have lost ${loss} rs. which is ${lossPercent}% loss.`;
+        outputgif.style.backgroundImage = `url(Images/sad.gif)`;
       }
       // profit
-      else {
-        results[1].style.display='none';
+      else if (sp > cp) {
         var profit = ((sp - cp) * qt).toFixed(2);
-        var profitPercent = ((profit * 100) / cp).toFixed(2);
-        results[0].style.display = "block";
-        results[0].innerHTML = `Profit: <strong>${profit}</strong>`;
-        results[2].style.display = "block";
-        results[2].innerHTML = `Percentage: <strong>${profitPercent}</strong>`;
-        bgImage.style.backgroundImage=`url('Images/profit.jpeg')`
+        var profitPercent = (((sp - cp) * 100) / cp).toFixed(2);
+        console.log(profitPercent);
+        output.style.display = "block";
+        output.textContent = `You gained ${profit} rs. which is ${profitPercent}% profit.`;
+        outputgif.style.backgroundImage = `url(Images/happy.gif)`;
+      } else {
+        output.style.display = "block";
+        output.textContent = `You neither gain profit nor loose.`;
+        outputgif.style.backgroundImage = `url(Images/happy.gif)`;
       }
-    } else alert('Please enter number greater than 0');
-  } else alert('Please enter number greater than 0')
+    } else {
+      alert("Please enter number greater than 0");
+      output.style.display = "none";
+      outputgif.style.display = "none";
+    }
+  } else {
+    alert("Please enter number greater than 0");
+    output.style.display = "none";
+    outputgif.style.display = "none";
+  }
 });

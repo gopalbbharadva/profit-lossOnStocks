@@ -3,10 +3,7 @@
 }
 
 body{
-    padding: 0;
     margin: 0;
-    /* height: 100vh;
-    width: 100%; */
 }
 
 :root{
@@ -16,14 +13,12 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    box-sizing: border-box;
 }
 .container{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    margin: 5rem auto;
+    margin: 5rem;
 }
 .main-form{
     box-shadow: 3px 10px 20px rgb(0 0 0 / 0.2);
@@ -89,10 +84,11 @@ a:hover{
     color: black;
 }
 button{
+    border: 2px solid white;
     font-size: larger;
     background: transparent;
     color: white;
-    padding: 1rem 2rem;
+    padding: 1rem;
 }
 button:hover{
     cursor: pointer;
@@ -102,13 +98,23 @@ button:hover{
 .sub-container{
     display: flex;
 }
-.output{
+.output-gif{
+    
+    background-size: cover;
+    background-position: center center;
+    width: 250px;
+    height: 250px;
     display: none;
-    padding: 1rem;
-    margin: 1rem;
     border: 2px solid white;    
-    max-width: 200px;
-    max-height: 150px;
+}
+.output{
+    font-weight: bold;
+    background-color: blue;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.3rem;
+    display: none;
+    color: white;
 }
 
 p{
@@ -124,6 +130,14 @@ p{
     .sub-container{
         display: flex;
         flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    h1{
+        text-align: center;
+    }
+    .output-gif{
+        margin-left: 2rem;
     }
     label{
         font-size: 1.2rem;
